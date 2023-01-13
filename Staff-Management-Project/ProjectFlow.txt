@@ -1,0 +1,62 @@
+Employee Management System
+
+This Application is used to enable the users (both the admin and the employees) to carry out some actions but with different levels of privileges
+
+The assumption is that an admin will definitely be a member of HR for the company.
+
+As for the Admin (who is also the employer) He/she can: ( I will elaborate these later...You can also put in your input @Emma @Femi)
+
+a. View all the employees
+------------------------------how it will look like---------------------------------------------------------------------------------------
+
+The details of all the employees will be visible in a tabular manner like this:
+
+        s/n     firstname          lastname            sex         date-of-employment   current level
+        1       Ugochukwu          Nwankiti            M           31-10-2022           01
+        2       Bolu               Akinjo              F           29-10-2022           01
+
+
+        ...and so on, also notice that the table is well arranged, so the display of the table will be just like this too
+
+What would you like to do? 1. Select a profile? ---> (Then you view a particular employee if you choose this option) 2. Go to Home?
+
+------------------------end of preview--------------------------------------------------------------------------------------------------------
+
+b. View a particular employee
+------------------------------how it will look like---------------------------------------------------------------------------------------
+Name: Ugochukwu Nwankiti
+Sex: Male
+Date of Employment: 31-10-2022
+current level: 01
+
+sent message:
+
+        s/n        date sent     content
+
+received message:
+
+        s/n        date sent     content
+
+What would you like to do? 1. Delete Ugochukwu's profile? 2. Send a message? 3. Go to Home?
+
+------------------------end of preview--------------------------------------------------------------------------------------------------------
+
+c. Add an employee 1. The program will prompt the user to enter all the details as seen in the tabular manner.. 2. The program then stores the new employee and updates all the relevant documents dealing the the employees
+
+d. Delete an employee
+e. Add an admin 1. Only Admin as the privileges to carry out all the actions listed so far... 2. SO here you get the details of the admin
+f. View all Admins
+
+Before the Admin can login, He will have to insert a password and a username
+
+As for the employee, He/she can ( I will elaborate these later...You can also put in your input @Emma @Femi)
+a. View his profile
+b. Edit some details (very limited here)
+c. Send a message to HR.
+
+Steps to Build the project (Will also be assigned as issues...) 1. Skeletal Home Page 2. Implement adding an admin 3. Implement adding an employee 4. Implement Viewing all employee & 5. Viewing all Admins 6. Admin actions 7. Employee actions
+
+
+STACKS FOR BUILDING
+1. Visual Studio
+2. Sqlite DB GUI for Viewing (after making changes) and editing the DB if you like. You can get it here (https://download.sqlitebrowser.org/SQLiteDatabaseBrowserPortable_3.12.2_English.paf.exe)
