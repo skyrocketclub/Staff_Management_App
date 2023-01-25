@@ -127,9 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Desktop\Staff Management Project\Staff Management Project\sqlite3.c" />
     <ClCompile Include="Admin.cpp" />
+    <ClCompile Include="App.cpp" />
     <ClCompile Include="Employee.cpp" />
+    <ClCompile Include="sqlite3.c" />
     <ClCompile Include="Staff Management Project.cpp" />
   </ItemGroup>
   <ItemGroup>

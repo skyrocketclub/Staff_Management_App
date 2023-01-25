@@ -18,14 +18,17 @@
     <ClCompile Include="Staff Management Project.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Admin.cpp">
+    <ClCompile Include="sqlite3.c">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Admin.cpp">
+      <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="Employee.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Desktop\Staff Management Project\Staff Management Project\sqlite3.c">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="App.cpp">
+      <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
