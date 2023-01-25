@@ -129,11 +129,13 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\..\Desktop\Staff Management Project\Staff Management Project\sqlite3.c" />
     <ClCompile Include="Admin.cpp" />
+    <ClCompile Include="App.cpp" />
     <ClCompile Include="Employee.cpp" />
     <ClCompile Include="Staff Management Project.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Admin.h" />
+    <ClInclude Include="App.h" />
     <ClInclude Include="Employee.h" />
   </ItemGroup>
   <ItemGroup>
