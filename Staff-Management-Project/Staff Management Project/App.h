@@ -40,6 +40,10 @@ public:
 	App();
 	~App();
 
+	string toUpperCase(string);
+	string requestPassword();
+	void checkPassword();
+
 	void adminLogin();
 	void employeeLogin();
 

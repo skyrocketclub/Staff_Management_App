@@ -5,49 +5,29 @@
 #include <string>
 #include "Employee.h"
 #include "Admin.h"
+#include "App.h"
 
 using std::cin;
 using std::cout;
 using std::endl;
 
-//
 
-void homePage()
-{
-
-    int choice{};
-    cout << "Enter an option\n1 - ADMIN\n2 - EMPLOYEE\n3 - QUIT\n INPUT : ";
-    cin >> choice;
-    switch (choice)
-    {
-    case (1):
-    {
-        // ENTER AS ADMIN
-    }
-    break;
-    case (2):
-    {
-        // ENTER AS EMPLOYEE
-    }
-    break;
-    case (3):
-    {
-        // QUIT
-        cout << "Goodbye";
-    }
-    break;
-    default:
-    {
-        cout << "Kindly enter a valid input\n";
-    }
-    }
-}
 
 int main()
 {
     // Testing that the employee constructor works
-    Admin musa;
-    musa.addAdmin();
+ /*   Admin musa;
+    musa.addAdmin();*/
+
+    //Testing that the App uppercase function works
+    App app;
+    string pass_key{ "Musa" };
+    cout << "PassKey before function: " << pass_key << endl;
+    
+    pass_key = app.toUpperCase(pass_key);
+    cout << "PassKey after function: " << pass_key << endl;
+
+
     return 0;
 }
 
