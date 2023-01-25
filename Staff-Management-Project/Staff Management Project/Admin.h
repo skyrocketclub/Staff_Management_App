@@ -44,7 +44,8 @@ public:
     bool addAdmin();
 
 private:
-    const char* dir = "c:\\users\\user\\desktop\\Staff Management Project\\office.db";
+   // const char* dir = "c:\\users\\user\\desktop\\Staff Management Project\\office.db";
+    const char* dir = "C:\\Users\\charles\\source\\repos\\Staff_Management_App"
     string verifyPassword(string);
 
 };
