@@ -24,7 +24,7 @@
     <ClCompile Include="Employee.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Desktop\Staff Management Project\Staff Management Project\sqlite3.c">
+    <ClCompile Include="..\..\..\relarional db\sqliteTesting\sqlite3.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="App.cpp">

@@ -1,6 +1,11 @@
 #pragma once
 
 /*
+* 1. Finish Implementing the Admin and the functions in the admin
+* 2. Implement skeletal functions for the employee
+* 3. Make the App class the Menu controller
+* 
+* 
 This app class basically controls the logic for both the
 
 Admin and the employee mode...
@@ -40,8 +45,9 @@ public:
 	App();
 	~App();
 
+	void appLogic();
 	void adminLogin();
-	void employeeLogin();
+	
 
 private:
 };

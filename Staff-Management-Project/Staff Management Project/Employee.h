@@ -13,8 +13,8 @@ public:
     string firstName_{ "" };
     string lastName_{ "" };
     string sex_{ "" };
+    string role_{ "" };
 
-    void viewProfile();
 
 private:
 };
