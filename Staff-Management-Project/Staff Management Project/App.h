@@ -46,7 +46,7 @@ public:
 	~App();
 
 	void appLogic();
-	void adminLogin();
+
 	
 
 private:

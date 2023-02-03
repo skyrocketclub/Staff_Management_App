@@ -3,18 +3,9 @@
 #include <string>
 #include "Employee.h"
 #include <sqlite3.h>
+#include <iomanip>
 
 using std::string;
-
-/*
-
-1. Create DB
-2. Create Table function ---> Factor in the details of the employee (including Inbox)
-3. Carry out the other functions
-4. The employee table ---> "EMPLOYEE"
-5. The admin table ---> "ADMIN"
-*/
-
 
 
 class Admin
@@ -35,9 +26,9 @@ public:
     // Function declarations
     bool addStaff();
     void viewAllEmployees();
-    void viewEmployee(Employee);
-    bool editEmployee(Employee);
-    bool deleteEmployee(Employee);
+    void viewEmployee();
+    bool editEmployee();
+    bool deleteEmployee();
 
    
 
@@ -53,5 +44,7 @@ private:
     int createEmployeeTable();
     int createDB();
     int createAdminTable();
+    //for output data to the console...
+    static int callback(void* NotUsed, int argc, char** argv, char** azColName);
 };
 

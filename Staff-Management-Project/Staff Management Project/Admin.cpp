@@ -165,26 +165,120 @@ Admin::Admin(string firstname, string lastname, string sex) {
      return 0;
 }
 
+ int Admin::callback(void* NotUsed, int argc, char** argv, char** azColName) {
+     cout << std::setw(4) << std::left << argv[0] << std::setw(15) << std::left<< argv[1] << std::setw(15) << std::left << argv[2] << std::setw(8) << std::left << argv[3]<<argv[4]<<"\n";
+     cout << endl;
+     return 0;
 
-//PENDING
+ }
+
+
 void Admin::viewAllEmployees()
 {
+    sqlite3* DB;
+    int exit = 0;
+    exit = sqlite3_open(dir, &DB);
+
+    string sql = "SELECT * FROM EMPLOYEE;";
+    cout << std::setw(4)<<std::left<<"ID " <<std::setw(15)<<std::left<< "Firstname" << std::setw(15) << std::left << "Lastname" << std::setw(8) << std::left << "Sex" << "Role \n";
+    exit = sqlite3_exec(DB, sql.c_str(), callback, NULL, NULL);
 }
 
-//PENDING
-void Admin::viewEmployee(Employee employee)
+
+void Admin::viewEmployee()
 {
+    //int ID;
+    string firstname{}, lastname{};
+    cout << "Enter Employee firstname: ";
+    cin >> firstname;
+    cout << "Enter Employee lastname: ";
+    cin >> lastname;
+
+
+    sqlite3* DB;
+    int exit = 0;
+    exit = sqlite3_open(dir, &DB);
+
+    string sql = "SELECT ID,FNAME, LNAME,SEX, ROLE FROM EMPLOYEE WHERE FNAME = '" +firstname + "' and LNAME = '" +lastname + "';";
+    cout << std::setw(4) << std::left << "ID" << std::setw(15) << std::left << "Firstname" << std::setw(15) << std::left << "Lastname" << std::setw(8) << std::left << "Sex" << "Role \n";
+    exit = sqlite3_exec(DB, sql.c_str(), callback, NULL, NULL);
 }
 
-//PENDING
-bool Admin::editEmployee(Employee employee)
+
+bool Admin::editEmployee()
 {
+    //Here, we only allow for the role of the employee to be changed
+    string firstname{}, lastname{}, newRole{};
+    cout << "Enter Employee firstname: ";
+    cin >> firstname;
+    cout << "Enter Employee lastname: ";
+    cin >> lastname;
+
+    sqlite3* DB;
+    int exit = 0;
+    exit = sqlite3_open(dir, &DB);
+
+    string sql = "SELECT ID,FNAME, LNAME,SEX, ROLE FROM EMPLOYEE WHERE FNAME = '" + firstname + "' and LNAME = '" + lastname + "';";
+    cout << std::setw(4) << std::left << "ID" << std::setw(15) << std::left << "Firstname" << std::setw(15) << std::left << "Lastname" << std::setw(8) << std::left << "Sex" << "Role \n";
+    exit = sqlite3_exec(DB, sql.c_str(), callback, NULL, NULL);
+
+    cout << "Enter " << firstname << "'s new role: ";
+    cin >> newRole;
+
+    //sql to edit the role
+    sql = "UPDATE EMPLOYEE SET ROLE = '" + newRole + "' WHERE FNAME = '" + firstname + "' and LNAME = '" + lastname + "';";
+
+    try {
+        char* messageError;
+        exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
+
+        if (exit != SQLITE_OK) {
+            cerr << "Error editing role" << endl;
+            sqlite3_free(messageError);
+        }
+        else {
+            cout << "Role edited Successfully" << endl;
+            sqlite3_close(DB);
+        }
+    }
+    catch (const std::exception& e) {
+        cerr << e.what();
+    }
     return true;
 }
 
-//PENDING
-bool Admin::deleteEmployee(Employee employee)
+
+bool Admin::deleteEmployee()
 {
+    string firstname{}, lastname{};
+    cout << "Enter Employee firstname: ";
+    cin >> firstname;
+    cout << "Enter Employee lastname: ";
+    cin >> lastname;
+
+    sqlite3* DB;
+    int exit = 0;
+    exit = sqlite3_open(dir, &DB);
+
+    string sql = "DELETE FROM EMPLOYEE WHERE FNAME = '" + firstname + "' and LNAME = '" + lastname + "';";
+
+    try {
+        char* messageError;
+        exit = sqlite3_exec(DB, sql.c_str(), NULL, 0, &messageError);
+
+        if (exit != SQLITE_OK) {
+            cerr << "Error deleting employee" << endl;
+            sqlite3_free(messageError);
+        }
+        else {
+            cout << "Employee deleted Successfully" << endl;
+            sqlite3_close(DB);
+        }
+    }
+    catch (const std::exception& e) {
+        cerr << e.what();
+    }
+
     return true;
 }
 
@@ -204,7 +298,7 @@ bool Admin::addEmployeeToDB(Employee employee) {
 
     string sql = "INSERT INTO EMPLOYEE (FNAME,LNAME,SEX,ROLE) VALUES('" + f_name + "','"
         + l_name + "','" + sex + "','" + role + "');";
-    cout << "\nCONFIRM DETAILS OF NEW ADMIN\n";
+    cout << "\nCONFIRM DETAILS OF NEW EMPLOYEE\n";
     cout << "Firstname: " << f_name
         << "\nLastname: " << l_name
         << "\nSex: " << sex
