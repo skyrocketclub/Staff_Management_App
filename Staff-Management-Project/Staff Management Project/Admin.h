@@ -27,25 +27,31 @@ public:
     string firstName_{ "" };
     string lastName_{ "" };
     string sex_{ "" };
+    string role_{ "" };
     string passWord_{ "" };
 
     
 
     // Function declarations
-     int createDB();
-     int createAdminTable();
-    int createEmployeeTable(const char* s);
-    void addEmployee();
+    bool addStaff();
     void viewAllEmployees();
     void viewEmployee(Employee);
     bool editEmployee(Employee);
     bool deleteEmployee(Employee);
 
-    bool addAdmin();
+   
 
 private:
-    const char* dir = "c:\\users\\user\\desktop\\Staff Management Project\\office.db";
-    string verifyPassword(string);
+    //path to the db in my computer
+    const char* dir = "C:\\Users\\user\\Desktop\\Current Project Main\\office.db";
 
+
+   // const char* dir = "c:\\users\\user\\desktop\\Staff Management Project\\office.db";
+
+    bool addAdminToDB(Admin);
+    bool addEmployeeToDB(Employee);
+    int createEmployeeTable();
+    int createDB();
+    int createAdminTable();
 };
 

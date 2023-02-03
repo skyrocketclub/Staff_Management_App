@@ -19,8 +19,3 @@ Employee::Employee() {}
 
 Employee::~Employee() {}
 
-void Employee::viewProfile()
-{
-    cout << "Name: " << this->firstName_ << " " << this->lastName_ << "\n";
-    cout << "Sex: " << this->sex_ << "\n";
-}
